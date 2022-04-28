@@ -1,3 +1,9 @@
+/*
+Предыдущую задачу трудно назвать объектно-ориентирован-
+ной. Реализуйте общий суперкласс UnitConversion и определите
+объекты InchesToCentimeters, GallonsToLiters и MilesToKilometers,
+наследующие его.
+ */
 package chapter_06
 
 object task_02 extends App {

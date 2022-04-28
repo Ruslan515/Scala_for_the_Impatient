@@ -1,3 +1,7 @@
+/*
+Напишите объект Conversions с методами inchesToCentimeters,
+gallonsToLiters и milesToKilometers.
+ */
 package chapter_06
 
 object task_01 extends App {
