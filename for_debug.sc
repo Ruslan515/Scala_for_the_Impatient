@@ -1,25 +1,25 @@
-val nums = Array(2, 7, 11, 15)
-val target = 9
-//for (i <- 0 until(5)) {
-//    println(i)
-//}
-nums.length
+import scala.collection.mutable.ArrayBuffer
 
-def twoSum(nums: Array[Int], target: Int): Array[Int] = {
-
-    for (i <- 0 until nums.length) {
-        val one = nums(i)
-        val two = target - one
-        for (j <- i + 1 until(nums.length) ){
-            if (nums(j) == two) {
-                val ans = Array(i, j)
-                return ans
-            }
-        }
-
-    }
-    val ans = Array(-1, -1)
-    ans
+abstract class Item {
+    def price: Int
+    def description: String
 }
 
-println(twoSum(nums, target))
+class SimpleItem(override val price: Int, override val description: String) extends Item
+
+class Bundle extends Item {
+    var items = ArrayBuffer[Item]()
+    def price() = items.foldLeft(0)(_+_.price)
+    def description() = items.map(_.description).mkString("; ")
+
+    def add_item(x: Item) = items += x
+}
+
+val bike = new SimpleItem(10, "bike")
+val auto = new SimpleItem(20, "auto")
+val house = new SimpleItem(50, "house")
+
+var items = ArrayBuffer[Item]()
+items += bike
+items += auto
+println(items.map(_.price).sum)
