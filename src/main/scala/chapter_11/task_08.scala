@@ -55,7 +55,7 @@ object task_08 extends App {
     println("\t\t\tmatrix 2")
     m2.prtln()
     println("##################################")
-
+    println("\t\t\tsum two matrix")
     val sum = m1 + m2
     sum.prtln()
 
