@@ -1,3 +1,14 @@
-val pairs = (1 to 10) zip (11 to 20)
-pairs(1)
+def unless(condition: => Boolean)(block: => Unit) {
+    if (!condition) block
+}
 
+unless(30 < 10) { println("unless") }
+
+
+def unless1(condition: => Boolean)(block: => Unit) {
+    if (!condition) block
+}
+
+val pos = 10
+
+unless1(pos == 9) { println("ok") }
