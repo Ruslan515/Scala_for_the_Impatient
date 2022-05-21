@@ -1,2 +1,3 @@
-val a = Array(1, 1, 2, 3, 77, -100, 0)
-a.reduceLeft[Int]((a,b) => if (a>b) a else b)
+val pairs = (1 to 10) zip (11 to 20)
+pairs(1)
+
