@@ -1,14 +1,4 @@
-def unless(condition: => Boolean)(block: => Unit) {
-    if (!condition) block
-}
+var t = Map("h" -> 42, "m" -> 33)
 
-unless(30 < 10) { println("unless") }
-
-
-def unless1(condition: => Boolean)(block: => Unit) {
-    if (!condition) block
-}
-
-val pos = 10
-
-unless1(pos == 9) { println("ok") }
+t = t.updated("s", 15)
+println(t("s"))
