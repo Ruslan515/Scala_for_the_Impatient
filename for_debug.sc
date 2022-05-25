@@ -1,11 +1,3 @@
-val buf = scala.collection.mutable.ListBuffer.empty[String]
-buf += "aa"
-buf += "bb"
-buf += "cc"
-buf += "tt"
-buf += "zz"
-
-val odd_buf = scala.collection.mutable.ListBuffer.empty[String]
-0.until(buf.size, 2).foreach(i => odd_buf += buf(i))
-println(odd_buf)
-
+val list_strings = Array("Tom", "Fred", "Harry")
+val list_hash = Map("Tom" -> 3, "Dick" -> 4, "Harry" -> 5)
+list_strings.flatMap(n => list_hash.get(n))
