@@ -1,4 +1,11 @@
-var t = Map("h" -> 42, "m" -> 33)
+val buf = scala.collection.mutable.ListBuffer.empty[String]
+buf += "aa"
+buf += "bb"
+buf += "cc"
+buf += "tt"
+buf += "zz"
 
-t = t.updated("s", 15)
-println(t("s"))
+val odd_buf = scala.collection.mutable.ListBuffer.empty[String]
+0.until(buf.size, 2).foreach(i => odd_buf += buf(i))
+println(odd_buf)
+
