@@ -16,5 +16,7 @@ object task_07 extends App {
     val prices = List(5.0, 20.0, 9.95)
     val quantities = List(10, 2, 1)
     val ans = (prices zip quantities) map { p => p._1 * p._2 }
+    ans.foreach(x => println(x))
     val ans1 = (prices zip quantities).map(((_:Double) * (_: Int)).tupled)
+    ans1.foreach(x => println(x))
 }
