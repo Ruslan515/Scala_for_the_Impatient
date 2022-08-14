@@ -1,6 +1,5 @@
-val time_zone = java.util.TimeZone.getAvailableIDs()
-time_zone.map(_.split("/")(0))
-val s = time_zone.map(_.split("/")(0)).toList.groupBy(identity).mapValues(_.size)
-s.maxBy(_._2)._1
+import scala.util.Try
+def unsafeMethod(): String = throw new RuntimeException("Sorry, not your day")
 
-
+val potentialFailure = Try(unsafeMethod())
+println(potentialFailure) // Failure(java.lang.RuntimeException: Sorry, not your day)
